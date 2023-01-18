@@ -1,6 +1,7 @@
 <template>
   <div class="contacts">
     <h1>This is the contact page</h1>
+    <CardAdd @addContact="addContact"/>
   </div>
   <div>
     <CardContact
@@ -12,11 +13,13 @@
 </template>
 
 <script>
+import CardAdd from "@/components/CardAdd.vue";
 import CardContact from "@/components/CardContact.vue";
 export default {
   name: "ContactsView",
   components: {
     CardContact,
+    CardAdd,
   },
   computed: {
     contacts() {

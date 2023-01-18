@@ -2,6 +2,7 @@
     <div>
         <h2>{{contact.name}}</h2>
         <span>numéro: +{{contact.tel}}</span>
+        <button>Appeler</button>
     </div>
 </template>
 <script>
@@ -25,4 +26,12 @@ export default {
     justify-content: center;
     gap: 10px; 
 }
+button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+  }
 </style>

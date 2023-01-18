@@ -4,16 +4,19 @@
     </div>
 </template>
 <script>
+import KeysCall from "@/components/KeysCall.vue";
 export default {
     name: 'ClavierView',
-    data () {
-        return {
-            msg: 'Welcome to the keyboard page'
-        }
+    components: {
+        KeysCall
     },
-    methods: {
-        // ...
+    computed:{
+
+    },
+    methods:{
+
     }
+    
 }
 </script>
 <style>
