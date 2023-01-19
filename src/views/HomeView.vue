@@ -1,14 +1,13 @@
 <template>
   <div class="home">
-    <h1>this is the journal</h1>
+    <h1>Votre historique d'appels</h1>
   </div>
 </template>
 
 <script>
 export default {
-  
-}
+  name: "HomeView",
+};
 </script>
-<style scoped>
 
-</style>
+<style scoped></style>

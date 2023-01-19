@@ -1,9 +1,10 @@
 <template>
   <div class="contacts">
-    <h1>This is the contact page</h1>
-    <CardAdd @addContact="addContact"/>
+    <h1>Vos Contacts</h1>
+    
+    <CardAdd @addContact="addContact" />
   </div>
-  <div>
+  <div class="list">
     <CardContact
       v-for="contact in contacts"
       :key="contact.id"
@@ -29,4 +30,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.list {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+</style>

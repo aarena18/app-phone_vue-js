@@ -1,24 +1,34 @@
 <template>
-    <div>
-        <h1>This is the keyboard page</h1>
-    </div>
+  <div>
+    <h1>Composez un numéro</h1>
+  </div>
+  <div class="keys">
+    <KeysCall />
+  </div>
 </template>
+
 <script>
 import KeysCall from "@/components/KeysCall.vue";
 export default {
-    name: 'ClavierView',
-    components: {
-        KeysCall
+  name: "ClavierView",
+  components: {
+    KeysCall,
+  },
+  computed: {
+    clavier() {
+      return this.$store.state.clavier;
     },
-    computed:{
-
+  },
+  methods: {
+    clicked() {
+      this.$store.state.keys.push;
     },
-    methods:{
-
-    }
-    
-}
+  },
+};
 </script>
-<style>
-    
+
+<style scoped>
+template {
+  background-color: black;
+}
 </style>

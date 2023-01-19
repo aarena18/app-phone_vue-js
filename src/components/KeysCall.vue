@@ -1,26 +1,120 @@
-<template >
-    <div class="keyboard">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>10</button>
-        <button>11</button>
-        <button>12</button>
-        <button>13</button>
-
+<template>
+  <div class="input-display">
+    <div class="inp">{{ inputValue }}</div>
+    
+  </div>
+  <div class="keyboard">
+    <div
+      v-for="key in row1"
+      v-bind:key="key.id"
+      @click="input(key)"
+      id="btn"
+      class="key"
+    >
+      {{ key }}
     </div>
+    <div
+      v-for="key in row2"
+      v-bind:key="key.id"
+      @click="input(key)"
+      id="btn"
+      class="key"
+    >
+      {{ key }}
+    </div>
+    <div
+      v-for="key in row3"
+      v-bind:key="key.id"
+      @click="input(key)"
+      id="btn"
+      class="key"
+    >
+      {{ key }}
+    </div>
+    <div
+      v-for="key in row4"
+      v-bind:key="key.id"
+      @click="input(key)"
+      id="btn"
+      class="key"
+    >
+      {{ key }}
+    </div>
+    <button @click="addCall" id="call" class="key">Appeler</button>
+  </div>
 </template>
 <script>
 export default {
-    
-}
+  name: "KeysCall",
+  data() {
+    return {
+      inputValue: "",
+      row1: ["1", "2", "3"],
+      row2: ["4", "5", "6"],
+      row3: ["7", "8", "9"],
+      row4: ["*", "0", "#"],
+    };
+  },
+  methods: {
+    input(key) {
+      this.inputValue += key;
+    },
+    addCall() {
+      this.$emit("addCall", this.inputValue);
+      this.inputValue = "";
+    },
+  },
+};
 </script>
-<style >
-    
+
+<style scoped>
+
+.inp {
+  text-align: center;
+  padding: 10px;
+  margin: 20px;
+  font-size: 21px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+.keyboard {
+  width: 250px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: row;
+}
+#call {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  border: none;
+  color: #2c3e50;
+  font-weight: bold;
+  background-color: #dde5ef;
+}
+
+#call:hover{
+  background-color: #2c56c9;
+  color: white;
+}
+
+#btn {
+  padding: 30px;
+  border-radius: 90px / 100px;
+  border: none;
+  background-color: #2c3e50;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+}
+
+#btn:hover{
+  background-color: #dde5ef;
+  color: #2c3e50;
+}
 </style>

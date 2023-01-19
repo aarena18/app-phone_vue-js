@@ -12,7 +12,7 @@
 
       <input type="number" placeholder="numéro... " v-model="CardAdd.tel" />
       <!-- <span v-if="CardAdd.tel.length < 3 && error" class="error">Le numéro doit faire maximum 12 chiffres </span> -->
-      <button type="submit">Ajouter aux contacts</button>
+      <button type="submit">Ajouter un contact</button>
     </form>
   </div>
 </template>
@@ -33,10 +33,10 @@ export default {
   },
   methods: {
     addContact() {
-      if (this.CardAdd.tel.length > 12) {
-        this.error = true;
-        return;
-      }
+      // if (this.CardAdd.tel.length > 12) {
+      //   this.error = true;
+      //   return;
+      // }
       if (this.CardAdd.name == "" || this.CardAdd.tel == null) return;
       if (
         this.$store.state.contacts.find(
@@ -56,8 +56,8 @@ export default {
 </script>
 <style scoped>
 form {
-  background-color: #42b983;
-  width: 50vw;
+  background-color: #dde5ef;
+  width: 300px;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
@@ -79,5 +79,8 @@ button {
   background-color: #2c3e50;
   color: white;
   font-weight: bold;
+}
+button:hover{
+  background-color: #2c56c9;
 }
 </style>

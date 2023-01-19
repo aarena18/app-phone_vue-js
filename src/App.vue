@@ -4,18 +4,18 @@
     <router-link to="/contacts">Contacts</router-link> |
     <router-link to="/clavier">Clavier</router-link>
   </nav>
-  
-  <router-view/>
+
+  <router-view />
 </template>
 <script>
 export default {
-  name: 'App',
-  data () {
+  name: "App",
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-}
+      msg: "Welcome to Your Vue.js App",
+    };
+  },
+};
 </script>
 <style>
 #app {
@@ -36,6 +36,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #2c56c9;
 }
 </style>
