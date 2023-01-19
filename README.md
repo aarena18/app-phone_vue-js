@@ -1,24 +1,13 @@
 # phone-app
 
-## Project setup
+## Project technologies
 ```
-npm install
+Vue.js
+
 ```
 
-### Compiles and hot-reloads for development
+### What is it about ?
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+First project working with Vue.js. This is a replicat of a phone repertory. You can add contacts, compose a number and see it in your call historical.
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
