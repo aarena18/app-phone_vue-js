@@ -54,13 +54,14 @@ export default {
 
 <style scoped>
 form {
-  background-color: #1c1c1c;
+  background-color: #ebebeb;
   width: 300px;
+
   margin: 20px auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 10px;
+  padding: 20px;
   border-radius: 10px;
 }
 
@@ -88,7 +89,7 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.9);
   display: flex;
   flex-direction: column;
   justify-content: center;

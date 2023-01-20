@@ -69,6 +69,7 @@ export default {
 </script>
 
 <style scoped>
+
 .inp {
   text-align: center;
   padding: 10px;
@@ -76,7 +77,7 @@ export default {
   font-size: 21px;
   border-radius: 10px;
   font-weight: bold;
-  color: #2c2c2d;
+  color: #eeeeee;
 }
 .keyboard {
   width: 250px;
