@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>{{ contact.name }}</h2>
-    <p>numéro: +<span>{{ contact.tel }}</span></p>
+    <p>📞 <span>{{ contact.tel }}</span></p>
     <button>Appeler</button>
   </div>
 </template>
@@ -18,7 +18,7 @@ div {
   width: 300px;
   margin: 0 auto;
   height: 150px;
-  background-color: #dde5ef;
+  background-color: #2c2c2d;
   border-radius: 10px;
   padding: 10px;
   display: flex;
@@ -31,25 +31,26 @@ button {
   padding: 10px;
   border-radius: 10px;
   border: none;
-  background-color: #2c3e50;
+  background-color: #2c56c9;
   color: white;
   font-weight: bold;
   margin-top: 15px;
   
 }
 button:hover{
-  background-color: #2c56c9;
+  background-color: #3e71fd;
 }
 
 p{
-  color: #2c3e50;
+  color: #eeeeee;
   font-weight: bolder;
 }
 span{
-  color: #5065a4;
+  color: #eeeeee;
+  font-weight: 400;
 }
 h2{
-  color: #2c3e50;
+  color: white;
   font-weight: bolder;
   margin: 0;
   padding: 0;

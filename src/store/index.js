@@ -23,17 +23,17 @@ export default createStore({
       {
         id: 1,
         name: "John Doe",
-        tel: 330606060606,
+        tel: "06 06 06 06 06",
       },
       {
         id: 2,
         name: "Anna Wintour",
-        tel: 330645672349,
+        tel: "06 45 67 23 49",
       },
       {
         id: 3,
         name: "Johnny Cage",
-        tel: 330612345678,
+        tel: "06 12 34 56 78",
       },
     ],
   },
@@ -42,8 +42,8 @@ export default createStore({
     addContact(state, contact) {
       state.contacts.push(contact);
     },
-    addCall(state, input){
-      state.calls.push(input);
+    addCall(state, inputValue){
+      state.inputValues.push(inputValue);
     }
     
     

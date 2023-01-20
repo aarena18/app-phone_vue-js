@@ -20,9 +20,11 @@ export default {
     },
   },
   methods: {
-    clicked() {
-      this.$store.state.keys.push;
+    addCall(inputValue) {
+      this.$store.commit("addCall", inputValue);
+      
     },
+    
   },
 };
 </script>

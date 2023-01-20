@@ -1,29 +1,30 @@
 <template>
-  <!-- PREVIEW CARD CONTACT -->
-  <!-- <CardContact :contact="CardAdd" /> -->
-
   <div>
-    <form @submit.prevent="addContact">
-      <input
-        type="text"
-        placeholder="Nom et prénom..."
-        v-model="CardAdd.name"
-      />
+    <button class="open" @click="open = true">+</button>
+    <div v-if="open" class="modal">
+      <form @submit.prevent="addContact">
+        <input
+          type="text"
+          placeholder="Nom et prénom..."
+          v-model="CardAdd.name"
+        />
 
-      <input type="number" placeholder="numéro... " v-model="CardAdd.tel" />
-      <!-- <span v-if="CardAdd.tel.length < 3 && error" class="error">Le numéro doit faire maximum 12 chiffres </span> -->
-      <button type="submit">Ajouter un contact</button>
-    </form>
+        <input type="number" placeholder="numéro... " v-model="CardAdd.tel" />
+
+        <button type="submit">Ajouter un contact</button>
+      </form>
+      <button class="close" @click="open = false">X</button>
+    </div>
   </div>
 </template>
-<script>
-// import CardContact from "./CardContact.vue";
 
+<script>
 export default {
   name: "CardAdd",
-  //   components: { CardContact },
+
   data() {
     return {
+      open: false,
       error: false,
       CardAdd: {
         name: "",
@@ -33,10 +34,6 @@ export default {
   },
   methods: {
     addContact() {
-      // if (this.CardAdd.tel.length > 12) {
-      //   this.error = true;
-      //   return;
-      // }
       if (this.CardAdd.name == "" || this.CardAdd.tel == null) return;
       if (
         this.$store.state.contacts.find(
@@ -54,9 +51,10 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 form {
-  background-color: #dde5ef;
+  background-color: #1c1c1c;
   width: 300px;
   margin: 20px auto;
   display: flex;
@@ -76,11 +74,29 @@ button {
   padding: 10px;
   border-radius: 10px;
   border: none;
-  background-color: #2c3e50;
+  background-color: #2c56c9;
   color: white;
   font-weight: bold;
 }
-button:hover{
-  background-color: #2c56c9;
+button:hover {
+  background-color: #3e71fd;
+}
+
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.open{
+  margin-bottom: 10px;
+  margin-left: 280px;
 }
 </style>

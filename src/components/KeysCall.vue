@@ -1,7 +1,6 @@
 <template>
   <div class="input-display">
     <div class="inp">{{ inputValue }}</div>
-    
   </div>
   <div class="keyboard">
     <div
@@ -11,7 +10,7 @@
       id="btn"
       class="key"
     >
-      {{ key }}
+      <span>{{ key }}</span>
     </div>
     <div
       v-for="key in row2"
@@ -20,7 +19,7 @@
       id="btn"
       class="key"
     >
-      {{ key }}
+      <span>{{ key }}</span>
     </div>
     <div
       v-for="key in row3"
@@ -29,7 +28,7 @@
       id="btn"
       class="key"
     >
-      {{ key }}
+      <span>{{ key }}</span>
     </div>
     <div
       v-for="key in row4"
@@ -38,9 +37,11 @@
       id="btn"
       class="key"
     >
-      {{ key }}
+      <span>{{ key }}</span>
     </div>
-    <button @click="addCall" id="call" class="key">Appeler</button>
+    <button type="submit" @click="addCall" id="call" class="key">
+      Appeler
+    </button>
   </div>
 </template>
 <script>
@@ -60,7 +61,7 @@ export default {
       this.inputValue += key;
     },
     addCall() {
-      this.$emit("addCall", this.inputValue);
+      this.$store.commit("addCall", this.inputValue);
       this.inputValue = "";
     },
   },
@@ -68,7 +69,6 @@ export default {
 </script>
 
 <style scoped>
-
 .inp {
   text-align: center;
   padding: 10px;
@@ -76,7 +76,7 @@ export default {
   font-size: 21px;
   border-radius: 10px;
   font-weight: bold;
-  color: #2c3e50;
+  color: #2c2c2d;
 }
 .keyboard {
   width: 250px;
@@ -93,28 +93,31 @@ export default {
   border-radius: 10px;
   font-size: 16px;
   border: none;
-  color: #2c3e50;
   font-weight: bold;
-  background-color: #dde5ef;
+  color: white;
+  background-color: #2c56c9;
 }
 
-#call:hover{
-  background-color: #2c56c9;
+#call:hover {
+  background-color: #3e71fd;
   color: white;
 }
 
 #btn {
-  padding: 30px;
-  border-radius: 90px / 100px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
   border: none;
-  background-color: #2c3e50;
+  background-color: #2c2c2d;
   font-size: 16px;
   color: white;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#btn:hover{
-  background-color: #dde5ef;
-  color: #2c3e50;
+#btn:hover {
+  background-color: #4e4e4e;
 }
 </style>
