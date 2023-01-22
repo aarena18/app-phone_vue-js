@@ -1,6 +1,8 @@
 <template>
   <div class="input-display">
-    <div class="inp">{{ inputValue }}</div>
+    <div class="inp">
+      <form >
+        <input class="input-field" type="text" v-model="inputValue"></form></div>
   </div>
   <div class="keyboard">
     <div
@@ -49,11 +51,11 @@ export default {
   name: "KeysCall",
   data() {
     return {
-      inputValue: "",
       row1: ["1", "2", "3"],
       row2: ["4", "5", "6"],
       row3: ["7", "8", "9"],
       row4: ["*", "0", "#"],
+      inputValue: "",
     };
   },
   computed: {
@@ -126,6 +128,24 @@ export default {
 }
 
 #btn:hover {
+  background-color: #4e4e4e;
+}
+
+.input-field {
+  text-align: center;
+  padding: 10px;
+  margin: 20px;
+  font-size: 21px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #eeeeee;
+  background-color: #2c2c2d;
+  width: 200px;
+  border: none;
+}
+
+.input-field:focus {
+  outline: none;
   background-color: #4e4e4e;
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="contacts">
     <h1>Vos Contacts</h1>
     
-    <CardAdd @addContact="addContact" />
+    <CardAdd @add="addContact" />
   </div>
   <div class="list">
     <CardContact

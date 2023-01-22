@@ -38,7 +38,7 @@ export default createStore({
       },
     ],
     inputValues: "",
-    journalAppel: [],
+    journalAppels: [],
   },
   getters: {},
   mutations: {
@@ -47,7 +47,11 @@ export default createStore({
     },
 
     call(state, contact){
-      state.contacts.push(contact);
+      state.journalAppels.push(contact);
+    },
+
+    addCall(state, contact){
+      state.journalAppels.push(contact);
     }
     
     
