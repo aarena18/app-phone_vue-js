@@ -2,6 +2,7 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
+    
     row1:{
       id: 1,
       keys:["1", "2", "3"]
@@ -36,14 +37,17 @@ export default createStore({
         tel: "06 12 34 56 78",
       },
     ],
+    inputValues: "",
+    journalAppel: [],
   },
   getters: {},
   mutations: {
     addContact(state, contact) {
       state.contacts.push(contact);
     },
-    addCall(state, inputValue){
-      state.inputValues.push(inputValue);
+
+    call(state, contact){
+      state.contacts.push(contact);
     }
     
     

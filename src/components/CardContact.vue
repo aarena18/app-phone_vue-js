@@ -7,7 +7,9 @@
         📞 <span>{{ contact.tel }}</span>
       </p>
     </div>
-    <button>Appeler</button>
+    <button class="appeler" @click="addCall(contact.name, contact.tel)">
+      Appeler
+    </button>
   </div>
 </template>
 
@@ -15,6 +17,11 @@
 export default {
   name: "CardContact",
   props: ["contact"],
+  methods: {
+    addCall(name, tel) {
+      this.$store.commit("call", { name, tel });
+    },
+  },
 };
 </script>
 
@@ -30,7 +37,6 @@ div {
   justify-content: space-between;
   gap: 10px;
   background-color: #2c2c2d;
-
 }
 
 .bg {

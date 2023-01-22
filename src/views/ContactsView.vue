@@ -27,6 +27,7 @@ export default {
       return this.$store.state.contacts;
     },
   },
+  
 };
 </script>
 

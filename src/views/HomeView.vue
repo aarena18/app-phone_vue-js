@@ -1,30 +1,31 @@
 <template>
   <div class="home">
     <h1>Votre historique d'appels</h1>
-  </div>
-  <div class="list">
-    <CardContact
-      v-for="contact in contacts"
-      :key="contact.id"
-      :contact="contact"
-    />
+
+    <div class="list" v-for="appel in journalAppel" :key="appel.id">
+      <h2>{{ appel.name }}</h2>
+      <span>{{ appel.tel }}</span>
+      <button class="test" @click="call(appel.name, appel.tel)">appler</button>
+    </div>
   </div>
 </template>
 
 <script>
-import CardContact from '@/components/CardContact.vue';
 export default {
   name: "HomeView",
-  components: {
-    CardContact,
-  },
+
   computed: {
-    contacts() {
-      return this.$store.state.contacts;
+    journalAppel() {
+      return this.$store.state.journalAppel;
+    },
+    
+  },
+  methods: {
+    addCall(name, tel) {
+      this.$store.commit("call", { name, tel });
     },
   },
 };
-
 </script>
 
 <style scoped></style>

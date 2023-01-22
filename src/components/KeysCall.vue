@@ -56,12 +56,20 @@ export default {
       row4: ["*", "0", "#"],
     };
   },
+  computed: {
+    inputValues() {
+      return this.$store.state.inputValues;
+    },
+  },
   methods: {
     input(key) {
       this.inputValue += key;
     },
     addCall() {
-      this.$store.commit("addCall", this.inputValue);
+      this.$store.commit("call", this.inputValue, {
+        name: this.inputValue,
+        tel: this.inputValue,
+      });
       this.inputValue = "";
     },
   },
@@ -69,7 +77,6 @@ export default {
 </script>
 
 <style scoped>
-
 .inp {
   text-align: center;
   padding: 10px;

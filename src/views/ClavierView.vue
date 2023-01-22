@@ -14,18 +14,6 @@ export default {
   components: {
     KeysCall,
   },
-  computed: {
-    clavier() {
-      return this.$store.state.clavier;
-    },
-  },
-  methods: {
-    addCall(inputValue) {
-      this.$store.commit("addCall", inputValue);
-      
-    },
-    
-  },
 };
 </script>
 
